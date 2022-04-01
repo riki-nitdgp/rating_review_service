@@ -16,6 +16,9 @@ public class Response {
 
     private Paginator pageInfo;
 
+
+    public Response(){};
+
     public Response(Object data, boolean success, int status, Paginator pageInfo) {
         this.data = data;
         this.success = success;

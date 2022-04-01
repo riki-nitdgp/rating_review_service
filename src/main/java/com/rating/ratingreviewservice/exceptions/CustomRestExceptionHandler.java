@@ -4,6 +4,7 @@ package com.rating.ratingreviewservice.exceptions;
 import com.rating.ratingreviewservice.models.ApiError;
 import com.rating.ratingreviewservice.utils.Constant;
 import com.rating.ratingreviewservice.utils.ResponseHandler;
+import feign.FeignException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -66,6 +67,13 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseHandler.generateErrorResponse(ex, HttpStatus.INTERNAL_SERVER_ERROR,
                 Constant.INTERNAL_SERVER_ERROR);
     }
+
+//    @ExceptionHandler
+//    public ResponseEntity<Object> handleHttpClientException(FeignException ex, WebRequest request) {
+//        String errorMessage = ex.getMessage();
+//        HttpStatus httpStatus = HttpStatus.valueOf(ex.status());
+//        return ResponseHandler.generateErrorResponse(ex, httpStatus, errorMessage);
+//    }
 
 
     @Override
