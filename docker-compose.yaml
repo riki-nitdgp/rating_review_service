@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  app:
+    image: rating-review-service:latest
+    build:
+      context: .
+    container_name: rating-review-service-container
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:rating_review_service_db
+      - SPRING_DATASOURCE_USERNAME=rating_review_service_user
+      - SPRING_DATASOURCE_PASSWORD=rating_review_service_pass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=rating-review-service
+      - OTEL_PROPAGATORS=b3
+    ports:
+      - 8002:8002
+
+
+

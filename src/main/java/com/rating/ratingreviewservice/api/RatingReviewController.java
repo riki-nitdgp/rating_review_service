@@ -34,7 +34,7 @@ public class RatingReviewController {
         return ratingReviewManager.userRatingReview(userId, pageNo, pageSize, sortBy, sortDir);
     }
 
-    @PostMapping("/raring-review")
+    @PostMapping("/rating-review")
     ResponseEntity<Object> rateAndReviewProduct(
             @RequestHeader Map requestHeaders, @Valid @RequestBody RatingReview ratingReview) {
 
